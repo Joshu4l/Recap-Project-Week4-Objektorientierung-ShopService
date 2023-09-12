@@ -40,18 +40,6 @@ public class ShopService
         Order newOrder = new Order(UUID.randomUUID().toString(), products, OrderState.PROCESSING, Instant.now());
         return orderRepo.addOrder(newOrder);
 
-            /*
-            HANDLING VIA OPTIONAL:
-            Optional<Product> productToOrder = productRepo.getProductById(productId);
-
-            if (productToOrder.isPresent()) {
-                products.add(productToOrder.get());
-            } else {
-                return null;
-            }
-            Order newOrder = new Order(UUID.randomUUID().toString(), products, OrderState.PROCESSING);
-            return orderRepo.addOrder(newOrder);
-             */
     }
 
     public Optional<Order> updateOrder (String orderId, OrderState orderState) {
